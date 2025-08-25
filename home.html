@@ -24,7 +24,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="bg-[rgba(244,245,247,1)] h-[100vh]">
+  <body class="bg-[rgba(244,245,247,1)] min-h-[100vh]">
     <div class="bg-white rounded-b">
       <div
         class="min-h-[50px] flex justify-between items-center max-w-lg mx-auto border-b-1 border-gray-300 p-3"
@@ -33,7 +33,9 @@
           <img class="h-[48px]" src="./assets/Group.png" alt="" />
 
           <div>
-            <h2 class="font-extrabold text-xl">$<span>45000</span></h2>
+            <h2 class="font-extrabold text-xl">
+              $<span id="dollar-count">45000</span>
+            </h2>
             <p class="text-[rgba(8,8,8,0.5)] text-xs">Available Balance</p>
           </div>
         </div>
@@ -102,14 +104,72 @@
       </div>
     </div>
 
-    <!-- logout and go to index.html -->
+    <div class="all-form-section max-w-lg mx-auto p-5">
+      <!-- add money  -->
 
-    <script>
-      document
-        .getElementById("button-click-id")
-        .addEventListener("click", function () {
-          window.location.href = "./index.html";
-        });
-    </script>
+      <div class="mt-[30px]">
+        <h1 class="font-bold text-[18px ] mb-4">Add Money</h1>
+
+        <form action="" class="bg-white rounded-2xl p-8">
+          <div class="mb-3">
+            <h1>Select a bank</h1>
+            <select
+              id="bank"
+              class="select bg-[rgba(244,245,247,1)] rounded-[32px] mt-3 text-[rgba(8,8,8,1)] font-[50] w-full"
+            >
+              <option disabled selected>Select bank</option>
+              <option>Chase Bank</option>
+              <option>Bank of America</option>
+              <option>Wells Fargo Bank</option>
+              <option>Citibank</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="" for="">Bank Account Number</label>
+            <br />
+            <input
+              type="text"
+              placeholder="Enter 11 digit account number"
+              class="input bg-[rgba(244,245,247,1)] rounded-[32px] mt-3 w-full"
+              id="account-number"
+            />
+
+            <p id="error-message" class="text-red-500 font-semibold mt-3"></p>
+          </div>
+          <div class="mb-3">
+            <label class="" for="">Amount to Add</label>
+            <br />
+            <input
+              type="text"
+              placeholder="Add Amount to withdraw"
+              class="input bg-[rgba(244,245,247,1)] rounded-[32px] mt-3 w-full"
+              id="added-amount"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="" for="">Pin Number</label>
+            <br />
+            <input
+              type="text"
+              placeholder="Enter 4 digit pin number"
+              class="input bg-[rgba(244,245,247,1)] rounded-[32px] mt-3 w-full"
+              id="add-pin-number"
+            />
+
+            <p id="pin-error" class="text-red-500 font-semibold mt-2"></p>
+          </div>
+
+          <button
+            type="button"
+            class="btn text-white mt-5 w-full rounded-3xl bg-[rgba(8,116,242,1)]"
+            id="addmoney-button"
+          >
+            Add Money
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./js files/home.js"></script>
   </body>
 </html>
