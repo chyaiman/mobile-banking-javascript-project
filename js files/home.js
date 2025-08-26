@@ -56,3 +56,50 @@ document
 
     // balanceElement.innerText = finalAmount;
   });
+
+// toggling feature
+document.getElementById("add-button").addEventListener("click", function () {
+  document.getElementById("cashout-parent").style.display = "none";
+
+  document.getElementById("add-money-parent").style.display = "block";
+});
+
+document
+  .getElementById("cashout-button")
+  .addEventListener("click", function () {
+    document.getElementById("add-money-parent").style.display = "none";
+
+    document.getElementById("cashout-parent").style.display = "block";
+  });
+
+// withdraw money
+
+document
+  .getElementById("withdraw-money-button")
+  .addEventListener("click", function () {
+    const agentNumber = document.getElementById("agent-number").value;
+    const pinNumber = document.getElementById("pin-number-cashout").value;
+
+    if (agentNumber.length != 11) {
+      alert("Please add an 11 digit agent number");
+      return;
+    }
+    if (pinNumber != "1234") {
+      alert("Pin is 1234");
+      return;
+    }
+
+    const amountofmoney = parseInt(
+      document.getElementById("money-to-remove").value
+    );
+    const accountbalance = parseInt(
+      document.getElementById("dollar-count").innerText
+    );
+
+    const newamount = accountbalance - amountofmoney;
+    if (newamount < 0) {
+      alert("Insufficient funds");
+    } else {
+      document.getElementById("dollar-count").innerText = newamount;
+    }
+  });
