@@ -1,5 +1,7 @@
 💳 Mobile Banking Web Application
 
+Live Link: https://chyaiman.github.io/mobile-banking-javascript-project/home.html
+
 A front-end simulation of a mobile banking app built with HTML, CSS, JavaScript, Tailwind, and DaisyUI.
 This project mimics core banking features like adding money, cashing out, transferring funds, paying bills, and tracking transaction history — all within a responsive, modern interface.
 
